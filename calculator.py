@@ -8,13 +8,14 @@ class CalcDisplay(ttk.Frame):
     def __init__(self, parent, **kwargs):
         ttk.Frame.__init__(self, parent, height=_heightBtn, width=_widthBtn*4)
 
-        self.pack_propagate(0)#rellenar el espacio
+        self.pack_propagate(0)
 
         s = ttk.Style()
-        s.configure('my.TLabel', font="Helvetica 80")
+        s.configure('my.TLabel', font="Helvetica 42")
 
-        self.lblDisplay = ttk.Label(self, text="0", style='My.TLabel', anchor=E) # anchor coloca este 
+        self.lblDisplay = ttk.Label(self, text="0", style='my.TLabel', anchor=E, foreground="red")
         self.lblDisplay.pack(fill=BOTH, expand=True)
+        
 
 class CalcButton(ttk.Frame):
     def __init__(self, parent, **kwargs):
@@ -50,14 +51,6 @@ class Calculator(ttk.Frame):
         CalcButton(self, text="0", command=None).grid(column=0, row=5, columnspan=2)
         CalcButton(self, text=",", command=None).grid(column=2, row=5)
         CalcButton(self, text="=", command=None).grid(column=3, row=5)
-
-
-
-
-        
-        
-        
-        
 
 
 class MainApp(Tk):
